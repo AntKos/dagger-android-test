@@ -15,20 +15,13 @@ public class Activity1Router implements Router {
 
     @Inject
     public Activity1Router(Activity1 context) {
-        log("Activity1Router created " + this);
         this.context = context;
     }
 
     @Override
     public void showNextActivity() {
         Intent intent = new Intent(context, Activity2.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        log("Activity1Router finalized " + this);
-        super.finalize();
     }
 }

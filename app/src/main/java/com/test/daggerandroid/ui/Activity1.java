@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.test.daggerandroid.R;
+import com.test.daggerandroid.di.qualifiers.ActivityRouterQualifier;
 import com.test.daggerandroid.router.Router;
 import com.test.daggerandroid.tools.Tool;
 
@@ -16,7 +17,7 @@ import dagger.android.AndroidInjection;
 public class Activity1 extends AppCompatActivity {
     @Inject
     Tool tool;
-    @Inject
+    @Inject @ActivityRouterQualifier
     Router router;
 
     @Override

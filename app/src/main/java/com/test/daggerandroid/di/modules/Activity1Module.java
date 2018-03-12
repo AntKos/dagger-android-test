@@ -1,5 +1,6 @@
 package com.test.daggerandroid.di.modules;
 
+import com.test.daggerandroid.di.qualifiers.ActivityRouterQualifier;
 import com.test.daggerandroid.di.scopes.ActivityScope;
 import com.test.daggerandroid.router.Router;
 import com.test.daggerandroid.router.Activity1Router;
@@ -16,6 +17,7 @@ public interface Activity1Module {
     Tool tool(ToolImpl tool);
 
     @ActivityScope
+    @ActivityRouterQualifier
     @Binds
     Router router(Activity1Router router);
 }
